@@ -1,0 +1,190 @@
+@font-face {
+  font-family: 'Haarlem Deco';
+  src: url('assets/font/Haarlem Deco.otf') format('opentype'),
+       url('assets/font/Haarlem Deco.ttf') format('truetype');
+  font-weight: normal; /* As defined by your font file */
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+    --adamare-red: #AF1E1B;
+    --text-color: #333;
+    --bg-color: #FFFFFF;
+}
+
+/* Basic Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Haarlem Deco', 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header {
+    min-height: 50vh; /* Covers 60-70% of the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* This is crucial for overall vertical alignment */
+}
+
+.logo-image {
+    height: 5rem; /* Start with a smaller rem value than the text font-size (2.5rem) */
+    width: auto; /* Allow width to scale proportionally */
+}
+
+/* Adjustments for larger screens for header/logo */
+@media (min-width: 768px) {
+    header {
+        min-height: 70vh;
+    }
+    .logo-image {
+        height: 10rem; /* Match the font-size of .logo-text on desktop */
+    }
+}
+
+
+/* Section Styling */
+section {
+    margin-bottom: 10vh;
+    background-color: var(--bg-color);
+}
+
+.showcase-image {
+    width: 100%;
+    height: auto;
+}
+
+h2 {
+    font-family: 'Haarlem Deco', sans-serif; /* Apply the custom font to headers as well */
+    font-size: 2rem;
+    color: var(--adamare-red);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    margin: 0 0 1rem 0;
+}
+
+.clothing-gallery {
+    display: flex;
+    flex-direction: column; /* Stack images vertically on mobile */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.clothing-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.clothing-item img:hover {
+    transform: translateY(-5px);
+}
+
+/* Adjustments for larger screens for sections */
+@media (min-width: 768px) {
+    .clothing-gallery {
+        flex-direction: row; /* Display images in a row on desktop */
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap; /* Allow wrapping if many images */
+    }
+    .clothing-item {
+        flex: 1 1 30%; /* Allow items to grow/shrink, roughly 3 per row */
+        max-width: 350px; /* Max width for images */
+    }
+    .clothing-item:not(:last-child) {
+        margin-right: 1.5rem; /* Spacing between images on desktop */
+    }
+    .clothing-item:last-child {
+        margin-right: 0;
+    }
+}
+
+.clothing-gallery-other {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row; /* Display images in a row on desktop */
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.clothing-item-other {
+    flex: 1 1 30%; /* Allow items to grow/shrink, roughly 3 per row */
+    max-width: 350px; /* Max width for images */
+}
+
+.clothing-item-other img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.clothing-item-other img:hover {
+    transform: translateY(-5px);
+}
+ 
+.clothing-item-other:not(:last-child) {
+    margin-right: 1.5rem; /* Spacing between images on desktop */
+}
+.clothing-item-other:last-child {
+    margin-right: 0;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: var(--bg-color);
+    margin: 8rem auto; /* 4rem top and bottom margin */
+}
+
+/* Footer */
+footer {
+    background-color: #303030;
+    color: grey;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer a {
+    color: grey;
+    text-decoration: none;
+}
+
+.social-links a {
+    color: grey;
+    text-decoration: none;
+    margin: 0 0.8rem;
+    transition: opacity 0.3s ease;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
